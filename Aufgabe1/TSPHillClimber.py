@@ -26,11 +26,11 @@ def hillClimber(table, journey):
     for i in range(0, iterations):
         rand1 = random.randint(0,len(journey)-1)
         rand2 = random.randint(0,len(journey)-1)
-        lastJourney[rand1], lastJourney[rand2] = lastJourney[rand2], lastJourney[rand1]
-        if lastJourneyLength > journeylength(lastJourney, table):
-            lastJourneyLength = journeylength(lastJourney, table)
+        lastJourney[rand1], lastJourney[rand2] = lastJourney[rand2], lastJourney[rand1] #swaps 2 random indices in journey array
+        if lastJourneyLength > journeylength(lastJourney, table): 
+            lastJourneyLength = journeylength(lastJourney, table) #save new journey length if shorter
         else: 
-            lastJourney[rand1], lastJourney[rand2] = lastJourney[rand2], lastJourney[rand1]
+            lastJourney[rand1], lastJourney[rand2] = lastJourney[rand2], lastJourney[rand1] #swap back if new journey isnt better
     return (lastJourney, lastJourneyLength)
 
 
